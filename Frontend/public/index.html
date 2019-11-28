@@ -9,12 +9,17 @@
       name="description"
       content="Web site created using create-react-app"
     />
-
     <!--
       <link rel="apple-touch-icon" href="logo192.png" />
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.1.1/css/ol.css"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.1.1/build/ol.js"></script>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -30,6 +35,7 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="backdrop-hook"></div>
+    <div id="modal-hook"></div>
     <div id="drawer-hook"></div>
     <div id="root"></div>
     <!--
