@@ -43,10 +43,15 @@ const getPlaceById = async (req, res, next) => {
   });
 };
 
-const getPlacesByUserId = (req, res, next) => {
+const getPlacesByUserId = async (req, res, next) => {
   const userId = req.params.uid;
 
-  const places = DUMMY_PLACES.filter(p => p.creator === userId);
+  // const places = DUMMY_PLACES.filter(p => p.creator === userId);
+  try {
+    const places = await Place.find({ creator: userId });
+  } catch (err) {
+    return new HttpError("Search failed, please try again", 500);
+  }
 
   if (!places || places.length === 0) {
     return next(
